@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-20 mx-8">
+  <div class="pt-20 px-8">
     <div class="text-center">
       <h1 class="text-3xl text-[#7283ef] font-semibold">Expense Tracker</h1>
     </div>
