@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import {resolve} from "path"
+import { resolve } from "path"
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  modules: ['@pinia/nuxt'],
   alias: {
     "@": resolve(__dirname, "/")
   },

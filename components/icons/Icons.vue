@@ -1,6 +1,6 @@
 <script setup></script>
 <template>
-  <div>
+  <div class="image">
     <svg
       class="animated"
       id="freepik_stories-money-stress"

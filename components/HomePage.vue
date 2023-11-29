@@ -1,11 +1,11 @@
 <template>
   <div
-    class="bg-gradient-to-r from-[#7283ef] to-[#4ffb8d] bg-cover bg-center mx-6 rounded-md text-white"
+    class="section bg-gradient-to-r from-[#7283ef] to-[#4ffb8d] bg-cover bg-center rounded-md text-white"
   >
     <div class="flex flex-col-2 flex-wrap my-8 gap-8 justify-evenly pt-6">
-      <div class="">
+      <div class="heading">
         <h1
-          class="text-4xl font-semibold select-none tracking-wide first-letter:uppercase text-[#23283b]"
+          class="header text-4xl font-semibold select-none tracking-wide first-letter:uppercase text-[#23283b]"
         >
           welcome to our budget app
         </h1>
@@ -18,11 +18,11 @@
 
       <div class="text-left">
         <h1
-          class="text-xl font-semibold select-none tracking-wide first-letter:uppercase text-[#23283b]"
+          class="heading text-xl font-semibold select-none tracking-wide first-letter:uppercase text-[#23283b]"
         >
           create an account
         </h1>
-        <p class="first-letter:uppercase text-gray-700">
+        <p class="paragraph first-letter:uppercase text-gray-700">
           create your account and start tacking your money.
         </p>
       <Forms/>
