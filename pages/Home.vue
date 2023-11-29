@@ -7,7 +7,8 @@
     <div>
 
       <!-- modal -->
-      <transaction-modal>
+      <transaction-modal
+      :modalActive="modalActive">
         <div class="text-lg text-center text-gray-800 font-semibold">
           <h1 class="text-[#7283ef]">Add Your Transactions</h1>
         </div>
@@ -48,9 +49,6 @@
 </template>
 
 <script setup>
-// const modalActive = ref(null)
-
-// const toggleModal = () => {
-// modalActive.value = !modalActive.value
-// }
+import { useExpenseStore } from '~/store/main.js'
+const useExpense = useExpenseStore()
 </script>

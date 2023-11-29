@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+
+</script>
 <template>
   <transition>
     <div
@@ -9,11 +11,6 @@
             <iconsCloseMenu/>
             <slot />
           <div class="">
-            <!-- <button
-              class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md py-2 px-6"
-            >
-              Closed
-            </button> -->
           </div>
         </div>
       </transition>
