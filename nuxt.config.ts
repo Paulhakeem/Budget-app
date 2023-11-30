@@ -11,10 +11,12 @@ export default defineNuxtConfig({
     pinia: "/node_modules/@pinia/nuxt/node_modules/pinia/dist/pinia.mjs"
   },
   css: ['~/assets/main.css'],
+  ssr: false,
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+  
 })

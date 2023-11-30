@@ -31,21 +31,9 @@
         </div>
       </div>
     </div>
-
-    <div class="text-center mt-20">
-      <button
-      @click="useExpense.toggleModal"
-        class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md px-2 py-1 w-72"
-      >
-        Add Transaction
-      </button>
-    </div>
   </div>
 </template>
 
 <script setup>
-import {useExpenseStore} from '~/store/main.js'
-
-const useExpense = useExpenseStore()
 </script>
 

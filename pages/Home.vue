@@ -5,10 +5,8 @@
     </div>
     <Balance />
     <div>
-
       <!-- modal -->
-      <transaction-modal
-      :modalActive="modalActive">
+      <transaction-modal :modalActive="modalActive" @close-modal="toggleModal">
         <div class="text-lg text-center text-gray-800 font-semibold">
           <h1 class="text-[#7283ef]">Add Your Transactions</h1>
         </div>
@@ -45,10 +43,22 @@
         </form>
       </transaction-modal>
     </div>
+
+    <div class="text-center mt-20">
+      <button
+        @click="toggleModal"
+        class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md px-2 py-1 w-72"
+      >
+        Add Transaction
+      </button>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { useExpenseStore } from '~/store/main.js'
-const useExpense = useExpenseStore()
+const modalActive = ref(null);
+
+const toggleModal = () => {
+  modalActive.value = !modalActive.value;
+};
 </script>
