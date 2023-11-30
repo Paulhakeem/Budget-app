@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- -->
-    <div class="flex flex-wrap gap-6">
+    <div class="flex flex-wrap justify-evenly gap-6">
       <div class="relative">
         <div
           class="absolute -inset-2 rounded-lg bg-gradient-to-r from-[#7283ef] via-orange-600 to-[#4ffb8d] opacity-75 blur"
@@ -21,7 +21,7 @@
               </div>
             </div>
             <h1 class="text-[#7283ef] text-xl text-center mt-8">Income</h1>
-            <p class="font-semibold text-3xl pt-4 text-white">KSH 1500</p>
+            <p class="font-semibold text-3xl pt-4 text-[#4ffb8d]">KSH +0.00</p>
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
             <div class="mx-4">
               <div class="w-full bg-gray-200 rounded-full dark:bg-gray-700">
                 <div
-                  class="bg-orange-600 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
+                  class="bg-red-500 text-xs font-medium text-blue-100 text-center leading-none rounded-full"
                   style="width: 45%"
                 >
                   45%
@@ -46,7 +46,7 @@
               </div>
             </div>
             <h1 class="text-[#7283ef] text-xl text-center mt-8">Expences</h1>
-            <p class="font-semibold text-3xl pt-4 text-white">KSH 1000</p>
+            <p class="font-semibold text-3xl pt-4 text-red-500">KSH -0.00</p>
           </div>
         </div>
       </div>

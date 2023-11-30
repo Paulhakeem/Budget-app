@@ -18,5 +18,9 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  
+  app: {
+head: {
+  title: "Paper Router Expense Tracker"
+}
+  }
 })

@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-20 px-8">
+  <div class="pt-20 justify-center">
     <div class="text-center">
       <h1 class="text-3xl text-[#7283ef] font-semibold">Expense Tracker</h1>
     </div>
@@ -20,7 +20,7 @@
             v-model="useExpense.name"
               type="text"
               placeholder="Enter either name of product or capital.."
-              class="outline-none border-b-2 border-b-gray-400 w-full ring-0 mt-4 text-gray-500"
+              class="outline-none border-b-2 border-b-gray-400 w-full ring-0 mt-4 text-gray-500 first-letter:uppercase"
             />
           </div>
           <div class="mb-6">
