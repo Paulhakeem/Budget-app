@@ -17,6 +17,7 @@
               >Enter the name</label
             >
             <input
+            v-model="useExpense.name"
               type="text"
               placeholder="Enter either name of product or capital.."
               class="outline-none border-b-2 border-b-gray-400 w-full ring-0 mt-4 text-gray-500"
@@ -30,6 +31,7 @@
               (Negative-Expences, Positive-Income)
             </p>
             <input
+              v-model="useExpense.amount"
               type="text"
               placeholder="Enter Amount.."
               class="outline-none border-b-2 border-b-gray-400 w-full ring-0 mt-4 text-gray-500"
@@ -56,6 +58,9 @@
 </template>
 
 <script setup>
+import {useExpenseStore } from '~/store/main'
+const useExpense = useExpenseStore()
+
 const modalActive = ref(null);
 
 const toggleModal = () => {
