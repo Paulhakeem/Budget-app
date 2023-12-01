@@ -5,28 +5,29 @@ export const useExpenseStore = defineStore("expense", () => {
   const newTransaction = ref("");
 
   const transactions = ref([]);
- 
-//  GenerateId 
-  const autoGenerateId = () => {
-    return Math.floor(Math.random() * 10000)
-  }
 
-   //  add Transaction
+  //  GenerateId
+  const autoGenerateId = () => {
+    return Math.floor(Math.random() * 10000);
+  };
+
+  //  add Transaction
   const addTransaction = () => {
     transactions.value.push({
       id: autoGenerateId(),
       name: newTransaction.value,
-      amount: parseFloat( amount.value)
-    })
-    newTransaction.value = ""
-    amount.value = "" 
+      amount: parseFloat(amount.value),
+    });
+    saveToLocalStorage();
+    newTransaction.value = "";
+    amount.value = "";
   };
 
-
-//   delete 
-const removeTransaction = (index) => {
-    transactions.value.splice(index, 1)
-}
+  //   delete
+  const removeTransaction = (index) => {
+    transactions.value.splice(index, 1);
+    saveToLocalStorage();
+  };
   //  get total
   const total = computed(() => {
     return transactions.value.reduce((acc, transaction) => {
@@ -54,6 +55,20 @@ const removeTransaction = (index) => {
       .toFixed(2);
   });
 
+  // save transactions
+  onMounted(() => {
+    const savedTransactions = JSON.parse(localStorage.getItem("transactions"));
+
+    if (savedTransactions) {
+      transactions.value = savedTransactions;
+    }
+  });
+
+  //  save to local storage
+  const saveToLocalStorage = () => {
+    localStorage.setItem("transactions", JSON.stringify(transactions.value));
+  };
+
   return {
     total,
     transactions,
@@ -63,6 +78,7 @@ const removeTransaction = (index) => {
     amount,
     autoGenerateId,
     addTransaction,
-    removeTransaction
+    removeTransaction,
+    saveToLocalStorage,
   };
 });
