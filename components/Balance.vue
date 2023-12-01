@@ -30,10 +30,12 @@
           </div>
           <div v-for="transaction in useExpense.transactions" 
           :key="transaction.id" :class="transaction.amount < 0 ? 'text-red-600' : 'text-green-500'">
-            <div class="pl-4 flex justify-between pt-4 mx-4">
+            <div class="pl-4 flex justify-between pt-4 mx-4 shadow-lg">
               <p>{{transaction.name}}</p>
               <p>{{transaction.amount}}</p>
-              <button class="bg-red-500 rounded-md w-18 p-1 text-white text-center">Remove</button>
+              <button
+              @click="useExpense.removeTransaction"
+              class="bg-red-500 rounded-md w-18 p-1 text-white text-center">Remove</button>
             </div>
           </div>
         </div>

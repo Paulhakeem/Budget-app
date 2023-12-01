@@ -21,7 +21,7 @@
               </div>
             </div>
             <h1 class="text-[#7283ef] text-xl text-center mt-8">Income</h1>
-            <p class="font-semibold text-3xl pt-4 text-[#4ffb8d]">KSH +0.00</p>
+            <p class="font-semibold text-3xl pt-4 text-[#4ffb8d]">KSH +{{useExpense.income}}</p>
           </div>
         </div>
       </div>
@@ -46,7 +46,7 @@
               </div>
             </div>
             <h1 class="text-[#7283ef] text-xl text-center mt-8">Expences</h1>
-            <p class="font-semibold text-3xl pt-4 text-red-500">KSH -0.00</p>
+            <p class="font-semibold text-3xl pt-4 text-red-500">KSH {{useExpense.expenses}}</p>
           </div>
         </div>
       </div>
@@ -54,6 +54,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import {useExpenseStore } from '~/store/main'
+const useExpense = useExpenseStore()
+</script>
 
 <style lang="scss" scoped></style>

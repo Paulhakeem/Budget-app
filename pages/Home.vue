@@ -11,13 +11,13 @@
           <h1 class="text-[#7283ef]">Add Your Transactions</h1>
         </div>
 
-        <form>
+        <form @submit.prevent="useExpense.addTransaction">
           <div class="pt-3 mb-6">
             <label for="text" class="text-gray-500 text-sm font-medium mb-2"
               >Enter the name</label
             >
             <input
-            v-model="useExpense.name"
+            v-model="useExpense.newTransaction"
               type="text"
               placeholder="Enter either name of product or capital.."
               class="outline-none border-b-2 border-b-gray-400 w-full ring-0 mt-4 text-gray-500 first-letter:uppercase"
