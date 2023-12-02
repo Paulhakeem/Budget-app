@@ -10,7 +10,7 @@
           welcome to our budget app
         </h1>
         <p class="pt-4 w-96 first-letter:uppercase text-gray-700">
-          our app helps you to track your money you spending on
+          our app help you to track your money you spend on your
           day to day activites.
         </p>
         <icons />
