@@ -15,8 +15,13 @@
               <iconsGitHub />
             </div>
           </div>
-          <div>
-            <h1 class="text-2xl font-semibold text-gray-700">SignUp</h1>
+          <div class="flex justify-between">
+            <h1 class="text-2xl font-medium text-gray-700">SignUp</h1>
+            <h1
+              class="text-lg font-semibold text-green-500 underline cursor-pointer"
+            >
+              SignIn
+            </h1>
           </div>
           <!-- form -->
           <Form
@@ -55,7 +60,6 @@
               >
               <ErrorMessage name="acc_pazzword" class="text-red-600" />
             </div>
-
             <button
               class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md px-2 py-1 w-full mt-4"
             >
@@ -77,7 +81,14 @@ const schema = Yup.object().shape({
   acc_pazzword: Yup.string().min(5).required().label("Your Password"),
 });
 
-function onSubmit(values) {
-  alert(JSON.stringify(values, null, 2));
-}
+const firebaseUser = useFirebaseUser();
+
+const userCredetials = ref();
+const onSubmit = async (values) => {
+  const email = "paulnyamawi18@gmail.com";
+  const password = "123456";
+
+  userCredetials.values = await createUser(email, password);
+  console.log("userCredetials:", userCredetials);
+};
 </script>
