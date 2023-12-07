@@ -60,11 +60,14 @@
               >
               <ErrorMessage name="acc_pazzword" class="text-red-600" />
             </div>
-            <button
+            <nuxt-link to="/Home">
+             <button
               class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md px-2 py-1 w-full mt-4"
             >
               Submit
             </button>
+            </nuxt-link>
+           
           </Form>
         </div>
       </div>
@@ -75,6 +78,7 @@
 <script setup>
 import { Field, Form, ErrorMessage } from "vee-validate";
 import * as Yup from "yup";
+
 
 const schema = Yup.object().shape({
   email_addr: Yup.string().email().required().label("Email Address"),

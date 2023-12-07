@@ -29,6 +29,7 @@ export const signIn = async (email, password) => {
   const userCredential = signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
+      console.log(user);
       // ...
     })
     .catch((error) => {
@@ -38,20 +39,20 @@ export const signIn = async (email, password) => {
 };
 
 // google login
-export const googleLogin = async (provider) => {
-  const provider = new GoogleAuthProvider();
-  const auth = getAuth();
-  const userCredential = signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      // ...
-    })
-    .catch((error) => {
-        alert(error.message);
-      // ...
-    });
-  return userCredential;
-};
+// export const googleLogin = async (provider) => {
+//   const provider = new GoogleAuthProvider();
+//   const auth = getAuth();
+//   const userCredential = signInWithPopup(auth, provider)
+//     .then((result) => {
+    //   const user = result.user;
+//       // ...
+//     })
+//     .catch((error) => {
+//         alert(error.message);
+//       // ...
+//     });
+//   return userCredential;
+// };
 
 // manage user
 export const manageUsers = async () => {
