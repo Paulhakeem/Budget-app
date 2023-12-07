@@ -17,18 +17,15 @@
           </div>
           <div class="flex justify-between">
             <h1 class="text-2xl font-medium text-gray-700">SignUp</h1>
-            <nuxt-link to="/login">
-             <h1
+            <h1
               class="text-lg font-semibold text-green-500 underline cursor-pointer"
             >
               SignIn
             </h1>
-            </nuxt-link>
-           
           </div>
           <!-- form -->
           <Form
-            @submit="useAuth.createAccount"
+            @submit="useAuth.SignIn"
             :validation-schema="schema"
             class="divide-gray-200 mt-6"
           >

@@ -24,12 +24,11 @@ export const createUser = async (email, password) => {
 };
 
 // login
-export const signIn = async (email, password) => {
+export const loginIn = async (email, password) => {
   const auth = getAuth();
   const userCredential = signInWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      console.log(user);
       // ...
     })
     .catch((error) => {
