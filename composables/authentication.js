@@ -58,11 +58,13 @@ export const manageUsers = async () => {
   const auth = getAuth();
   const firebaseUser = useFirebaseUser()
   firebaseUser.value = auth.currentUser
+  const userCookie = useCookie('useCookie') 
   onAuthStateChanged(auth, (user) => {
     if (user) {
         firebaseUser.value = user
     } else {
     console.log(user ,':logout');
     }
+    userCookie.value = user
   });
 };

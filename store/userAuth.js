@@ -16,7 +16,7 @@ export const useAuthStore = defineStore("auth", () => {
         password: ''
      }
      if(userCredential) {
-        useNuxtApp().$toast.info('Account successfully created!🤗')
+        useNuxtApp().$toast.success('Account successfully created!🤗')
         // toast.info('toastify success')
      }
     };
@@ -28,7 +28,7 @@ export const useAuthStore = defineStore("auth", () => {
            password: ''
         }
         if(userCredential) {
-           useNuxtApp().$toast.info('Login successfully!🤗')
+           useNuxtApp().$toast.success('Login successfully!🤗')
            // toast.info('toastify success')
         }
        };
