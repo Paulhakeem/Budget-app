@@ -27,6 +27,7 @@ export default defineNuxtConfig({
   title: "Paper Router Expense Tracker"
 }
   },
+  
   // runtimeConfig: {
   //   FIREBASE_API_KEY: process.env.FIREBASE_API_KEY, // can be overridden by NUXT_API_SECRET environment variable
   //   public: {

@@ -65,12 +65,14 @@
               >
               <ErrorMessage name="acc_pazzword" class="text-red-600" />
             </div>
-           
-             <button
+           <nuxt-link to="/Home">
+            <button
               class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md px-2 py-1 w-full mt-4"
             >
               Submit
             </button>
+           </nuxt-link>
+            
            
            
           </Form>
