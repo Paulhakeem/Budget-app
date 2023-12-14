@@ -25,13 +25,11 @@
           </div>
           <!-- form -->
           <Form
-            @submit="useAuth.SignIn"
             :validation-schema="schema"
             class="divide-gray-200 mt-6"
           >
             <div class="relative">
               <Field
-               v-model="useAuth.userDetails.email"
                 id="email_addr"
                 name="email_addr"
                 type="email"
@@ -48,7 +46,6 @@
 
             <div class="relative mt-4">
               <Field
-                v-model="useAuth.userDetails.password"
                 id="password"
                 name="acc_pazzword"
                 type="password"
@@ -80,16 +77,13 @@
 <script setup>
 import { Field, Form, ErrorMessage } from "vee-validate"
 import * as Yup from "yup";
-import {useAuthStore} from '~/store/userAuth'
 
-const useAuth = useAuthStore()
 
 const schema = Yup.object().shape({
   email_addr: Yup.string().email().required().label("Email Address"),
   acc_pazzword: Yup.string().min(5).required().label("Your Password"),
 });
 
-const firebaseUser = useFirebaseUser();
 
 
 </script>

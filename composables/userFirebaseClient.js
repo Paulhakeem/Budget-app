@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-export default defineNuxtPlugin((nuxtApp) => {
-  // const config = useRuntimeConfig()
+ 
 
   const firebaseConfig = {
     apiKey: "AIzaSyD5Lq9im57kASE9gd6Z4hTIeTPa9dCa_rs",
@@ -15,12 +14,12 @@ export default defineNuxtPlugin((nuxtApp) => {
 
   // Initialize Firebase
   const app = initializeApp(firebaseConfig);
-  // console.log(app);
-  manageUsers()
 
+export default function userFirebaseClient ()
+ {
   const auth = getAuth(app);
 
-  nuxtApp.vueApp.provide('auth', auth)
-  nuxtApp.provide('auth', auth)
+  return {app, auth}
+}
   
-});
+
