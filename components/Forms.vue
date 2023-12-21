@@ -26,9 +26,14 @@
             </nuxt-link>
           </div>
           <!-- form -->
-          <form :validation-schema="schema" class="divide-gray-200 mt-6">
+          <form
+            @submit.prevent="useStore.signInWithCredential"
+            :validation-schema="schema"
+            class="divide-gray-200 mt-6"
+          >
             <div class="relative">
               <Field
+                v-model="useStore.email"
                 id="email_addr"
                 name="email_addr"
                 type="email"
@@ -45,6 +50,7 @@
 
             <div class="relative mt-4">
               <Field
+                v-model="useStore.password"
                 id="password"
                 name="acc_pazzword"
                 type="password"
@@ -58,13 +64,11 @@
               >
               <ErrorMessage name="acc_pazzword" class="text-red-600" />
             </div>
-            <nuxt-link to="/Home">
-              <button
-                class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md px-2 py-1 w-full mt-4"
-              >
-                Submit
-              </button>
-            </nuxt-link>
+            <button
+              class="bg-gradient-to-bl from-[#7283ef] to-[#4ffb8d] text-white rounded-md px-2 py-1 w-full mt-4"
+            >
+              Submit
+            </button>
           </form>
         </div>
       </div>
@@ -75,6 +79,9 @@
 <script setup>
 import { Field, Form, ErrorMessage } from "vee-validate";
 import * as Yup from "yup";
+import { useAuthStore } from "~/store/auth";
+
+const useStore = useAuthStore();
 
 const schema = Yup.object().shape({
   email_addr: Yup.string().email().required().label("Email Address"),

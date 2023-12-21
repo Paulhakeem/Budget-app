@@ -67,5 +67,8 @@ const toggleModal = () => {
   modalActive.value = !modalActive.value;
 };
 
+definePageMeta({
+  middleware: ["auth"]
+})
 
 </script>
