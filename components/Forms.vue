@@ -9,7 +9,7 @@
         <div class="form-detail max-w-md mx-auto">
           <div class="flex justify-between mb-4">
             <div class="cursor-pointer">
-              <iconsGoogle />
+              <iconsGoogle @click="useStore.signUpWithGoogle"/>
             </div>
             <div class="cursor-pointer">
               <iconsGitHub />
