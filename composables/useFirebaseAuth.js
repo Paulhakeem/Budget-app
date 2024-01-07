@@ -1,16 +1,16 @@
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-  GithubAuthProvider,
   signInWithPopup,
-  GoogleAuthProvider,
 } from "firebase/auth";
 
 export default function () {
   const { $auth } = useNuxtApp();
   const user = useState("firebaseUser", () => null);
-  const google = new GoogleAuthProvider();
-  const github = new GithubAuthProvider()
+
+
+
+  // functions
   const registerUser = async (email, password) => {
     try {
       const userCredentials = await createUserWithEmailAndPassword(
@@ -60,8 +60,9 @@ export default function () {
         user.value = userCreds.user;
         useNuxtApp().$toast.success("Signin With google Successfully!");
       }
+      
     } catch (error) {
-      useNuxtApp().$toast.success("An error occurs!😢");
+      useNuxtApp().$toast.error("An error occurs!😢");
     }
     
   };
@@ -74,7 +75,7 @@ export default function () {
         useNuxtApp().$toast.success("Signin With github Successfully!");
       }
     } catch (error) {
-      useNuxtApp().$toast.success("An error occurs!😢");
+      useNuxtApp().$toast.error("An error occurs!😢");
     }
     
   };
@@ -82,8 +83,6 @@ export default function () {
     signOutUser,
     registerUser,
     signinUser,
-    google,
-    github,
     signinWithGoogle,
     signinWithGithub
   };
