@@ -31,11 +31,10 @@ export const useAuthStore = defineStore("auth", () => {
   };
 
   const signUpWithGoogle = async () => {
-    const { error } = await signinWithGoogle(google);
-    if (error) {
-      useNuxtApp().$toast.error("login failed!");
+    const user = await signinWithGoogle(google);
+    if (user) {
+      useNuxtApp().$toast.success("Google login successfull");
     }
-    useNuxtApp().$toast.success("Google login successfull");
     await navigateTo({ path: "/home" });
   };
 
